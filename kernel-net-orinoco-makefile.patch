@@ -1,0 +1,14 @@
+diff -ur orinoco-0.15rc2.orig/Makefile orinoco-0.15rc2/Makefile
+--- orinoco-0.15rc2.orig/Makefile	2004-07-28 08:06:45.000000000 +0200
++++ orinoco-0.15rc2/Makefile	2005-04-02 19:25:04.000000000 +0200
+@@ -51,10 +51,6 @@
+ $(error Can't cope with 2.6 and pcmcia-cs together)
+ endif
+ CONFIG_PCMCIA = m
+-else
+-ifneq (,$(wildcard $(MODULE_DIR_PCMCIA)/orinoco_cs.o))
+-$(error PCMCIA_CS must be defined to overwrite old drivers)
+-endif
+ endif
+ 
+ MODULES = hermes.o orinoco.o
