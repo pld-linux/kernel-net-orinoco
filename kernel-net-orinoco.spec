@@ -8,7 +8,7 @@
 %define		_orinoco_rel	rc2
 %define		_orinoco_ver	0.15
 %define		_orinoco_name	orinoco
-%define		_rel		0.%{_orinoco_rel}.1
+%define		_rel		0.%{_orinoco_rel}.2
 Summary:	Linux driver for WLAN cards based on orinoco
 Summary(pl):	Sterownik dla Linuksa do kart bezprzewodowych opartych na uk³adzie orinoco
 Name:		kernel-net-orinoco
@@ -18,6 +18,8 @@ Group:		Base/Kernel
 License:	GPL v2
 Source0:	http://www.ozlabs.org/people/dgibson/dldwd/%{_orinoco_name}-%{_orinoco_ver}%{_orinoco_rel}.tar.gz
 # Source0-md5:	2246f0879439d74f7aabc7935cec90c0
+Patch0:		%{name}-makefile.patch
+Patch1:		%{name}-pci.patch
 URL:		http://www.ozlabs.org/people/dgibson/dldwd/
 %if %{with kernel}
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 2.6.7}
@@ -61,6 +63,8 @@ Ten pakiet zawiera modu³ j±dra Linuksa SMP.
 
 %prep
 %setup -q -n %{_orinoco_name}-%{_orinoco_ver}%{_orinoco_rel}
+%patch0 -p1
+%patch1 -p1
 
 %build
 # kernel module(s)
