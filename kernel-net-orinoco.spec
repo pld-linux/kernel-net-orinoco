@@ -18,7 +18,6 @@ Group:		Base/Kernel
 License:	GPL v2
 Source0:	http://www.ozlabs.org/people/dgibson/dldwd/%{_orinoco_name}-%{_orinoco_ver}%{_orinoco_rel}.tar.gz
 # Source0-md5:	2246f0879439d74f7aabc7935cec90c0
-# Source0-size:	98693
 URL:		http://www.ozlabs.org/people/dgibson/dldwd/
 %if %{with kernel}
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 2.6.7}
