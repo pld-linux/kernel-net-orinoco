@@ -20,7 +20,7 @@ Source0:	http://www.ozlabs.org/people/dgibson/dldwd/%{_orinoco_name}-%{_orinoco_
 # Source0-md5:	2246f0879439d74f7aabc7935cec90c0
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-pci.patch
-URL:		http://www.ozlabs.org/people/dgibson/dldwd/
+URL:		http://www.nongnu.org/orinoco/
 %if %{with kernel}
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 2.6.7}
 %{?with_dist_kernel:%requires_releq_kernel_up}
