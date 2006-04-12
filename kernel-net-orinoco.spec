@@ -6,27 +6,26 @@
 %bcond_with	verbose		# verbose build (V=1)
 #
 %define		_orinoco_rel	rc2
-%define		_orinoco_ver	0.15
 %define		_orinoco_name	orinoco
 %define		_rel		0.%{_orinoco_rel}.2
 Summary:	Linux driver for WLAN cards based on orinoco
 Summary(pl):	Sterownik dla Linuksa do kart bezprzewodowych opartych na uk³adzie orinoco
 Name:		kernel-net-orinoco
-Version:	%{_orinoco_ver}
+Version:	0.15
 Release:	%{_rel}@%{_kernel_ver_str}
-Group:		Base/Kernel
 License:	GPL v2
-Source0:	http://www.ozlabs.org/people/dgibson/dldwd/%{_orinoco_name}-%{_orinoco_ver}%{_orinoco_rel}.tar.gz
+Group:		Base/Kernel
+Source0:	http://www.ozlabs.org/people/dgibson/dldwd/%{_orinoco_name}-%{version}%{_orinoco_rel}.tar.gz
 # Source0-md5:	2246f0879439d74f7aabc7935cec90c0
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-pci.patch
 URL:		http://www.nongnu.org/orinoco/
 %if %{with kernel}
-%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 2.6.7}
+%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.7}
 %{?with_dist_kernel:%requires_releq_kernel_up}
+BuildRequires:	rpmbuild(macros) >= 1.153
 Requires(post,postun):	/sbin/depmod
 %{?with_dist_kernel:Requires(postun):	kernel}
-BuildRequires:	rpmbuild(macros) >= 1.153
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,7 +61,7 @@ orinoco.
 Ten pakiet zawiera modu³ j±dra Linuksa SMP.
 
 %prep
-%setup -q -n %{_orinoco_name}-%{_orinoco_ver}%{_orinoco_rel}
+%setup -q -n %{_orinoco_name}-%{version}%{_orinoco_rel}
 %patch0 -p1
 %patch1 -p1
 
