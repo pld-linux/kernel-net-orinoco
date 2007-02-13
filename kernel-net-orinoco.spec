@@ -9,7 +9,7 @@
 %define		_orinoco_name	orinoco
 %define		_rel		0.%{_orinoco_rel}.2
 Summary:	Linux driver for WLAN cards based on orinoco
-Summary(pl.UTF-8):   Sterownik dla Linuksa do kart bezprzewodowych opartych na układzie orinoco
+Summary(pl.UTF-8):	Sterownik dla Linuksa do kart bezprzewodowych opartych na układzie orinoco
 Name:		kernel-net-orinoco
 Version:	0.15
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -42,7 +42,7 @@ Ten pakiet zawiera moduł jądra Linuksa UP.
 
 %package -n kernel-smp-net-orinoco
 Summary:	Linux SMP driver for WLAN cards based on orinoco
-Summary(pl.UTF-8):   Sterownik dla Linuksa SMP do kart bezprzewodowych opartych na układzie orinoco
+Summary(pl.UTF-8):	Sterownik dla Linuksa SMP do kart bezprzewodowych opartych na układzie orinoco
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
